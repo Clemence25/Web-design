@@ -4,7 +4,7 @@
 **Назва лабораторної роботи:** Розробка статичного інтерфейсу Web-додатка
 
 **Звіт**
-Посилання на звіт: 
+Посилання на звіт: https://drive.google.com/drive/folders/1VqR58PRmFJcE-0EVn7OZ_tpC_tY91w5j?usp=sharing
 
 **Завдання:**
 
