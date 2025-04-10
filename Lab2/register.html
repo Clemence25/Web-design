@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" style="background: #31391b;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Register - Brand</title>
+    <meta name="description" content="LexiLearn – розумний шлях до вільної англійської! 
+
+LexiLearn – це сучасна платформа для ефективного вивчення англійської мови та розширення словникового запасу. Завдяки інтерактивним методам навчання ти зможеш легко запам’ятовувати нові слова та покращувати свої мовні навички.  
+
+✨ Що пропонує LexiLearn?  
+* Режим вивчення – асоціативні картки, аудіо-вимова та практичні приклади.  
+* Контроль знань – тести, ігри та вправи для перевірки запам’ятовування.  
+* Персоналізоване навчання – алгоритми підлаштовуються під твій рівень.  
+* Зручний доступ – навчайся будь-де та будь-коли.  
+
+LexiLearn – вчи англійську легко, швидко та цікаво! 🚀📚">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+  </head>
+  <body class="bg-gradient-primary" style="background: #31391b;">
+    <div class="container" style="background: #31391b;">
+      <div class="card shadow-lg o-hidden border-0 my-5">
+        <div class="card-body p-0">
+          <div class="row">
+            <div class="col-lg-5 d-none d-lg-flex" style="background: rgb(227,223,200);">
+              <div class="flex-grow-1 bg-register-image" style="background-image: url('assets/img/pics/image3.jpeg');"></div>
+            </div>
+            <div class="col-lg-7" style="background: rgb(227,223,200);">
+              <div class="p-5" style="background: rgba(224,221,195,0.72);">
+                <div class="text-center">
+                  <h4 class="text-dark mb-4"><strong>Create an Account!</strong></h4>
+                </div>
+                <!-- Добавлен id для обработки формы -->
+                <form id="registerForm" class="user">
+                  <div class="row mb-3">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="First Name" name="first_name" required>
+                    </div>
+                    <div class="col-sm-6">
+                      <input class="form-control form-control-user" type="text" id="exampleLastName" placeholder="Last Name" name="last_name" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <input class="form-control form-control-user" type="email" id="exampleInputEmail" placeholder="Email Address" name="email" required>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Password" name="password" required>
+                    </div>
+                    <div class="col-sm-6">
+                      <input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput" placeholder="Repeat Password" name="password_repeat" required>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary d-block btn-user w-100" type="submit" style="background: #31391b;">Register Account</button>
+                  <hr>
+                  <a id="googleRegisterBtn" class="btn btn-primary d-block btn-google btn-user w-100 mb-2" role="button" style="background: #31391b;">
+                    <i class="fab fa-google"></i>&nbsp; Register with Google
+                  </a>
+                  <a id="facebookRegisterBtn" class="btn btn-primary d-block btn-facebook btn-user w-100" role="button" style="background: #31391b;">
+                    <i class="fab fa-facebook-f"></i>&nbsp; Register with Facebook
+                  </a>
+                  <hr>
+                </form>
+                <div class="text-center">
+                  <a class="small" href="forgot-password.html" style="color: #31391b;">Forgot Password?</a>
+                </div>
+                <div class="text-center">
+                  <a class="small" href="login.html" style="color: #31391b;">Already have an account? Login!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Обработка отправки формы регистрации
+        const registerForm = document.getElementById("registerForm");
+        registerForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const firstName = registerForm.elements["first_name"].value.trim();
+          const lastName = registerForm.elements["last_name"].value.trim();
+          const email = registerForm.elements["email"].value.trim();
+          const password = registerForm.elements["password"].value;
+          const passwordRepeat = registerForm.elements["password_repeat"].value;
+          
+          if (password !== passwordRepeat) {
+            alert("Passwords do not match!");
+            return;
+          }
+          
+          // Логируем данные в консоль (в реальном приложении здесь можно выполнить отправку на сервер)
+          console.log({ firstName, lastName, email, password });
+          alert("Registration successful!");
+          registerForm.reset();
+        });
+        
+        // Обработка клика для регистрации через Google
+        const googleRegisterBtn = document.getElementById("googleRegisterBtn");
+        googleRegisterBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          alert("Google registration is not implemented in this demo.");
+        });
+        
+        // Обработка клика для регистрации через Facebook
+        const facebookRegisterBtn = document.getElementById("facebookRegisterBtn");
+        facebookRegisterBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          alert("Facebook registration is not implemented in this demo.");
+        });
+      });
+    </script>
+  </body>
+</html>
